@@ -1,8 +1,9 @@
 
-   <h4>Menu Results</h4>
+   <h4>Menu Results: </h4>
+   <div>{{items.empty}}</div>
    <ul class="row">
         <li ng-repeat="item in items.foundItems" class="col-xl-12">
         {{ item.name }} - {{ item.shortName }}: {{ item.description }}
-            <button ng-click="items.items.onRemove({index: $index})">Don't want this one!</button>
+            <button ng-click="items.removeItem({index: $index})">Don't want this one!</button>
         </li>
     </ul>

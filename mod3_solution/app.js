@@ -25,11 +25,14 @@
     function NarrowItDownController(MenuSearchService) {
         var list = this;
         list.items = []
+        list.empty = ''
 
         list.showMenuItems = function (search) {
           var promise = MenuSearchService.getMatchedMenuItems(search);
           promise.then(function (response) {
-          console.log(response)
+          if (search === '' || response.length === 0) {
+            list.warning = 'Nothing found.'
+          }
           list.items = response
         })
         .catch(function (err) {
@@ -38,9 +41,8 @@
         });
         };
 
-        list.removeItem = function (index) {
-          var updatedList = MenuSearchService.removeItem(index);
-          list.items = updatedList
+        list.items.removeItem = function (index) {
+          list.items = MenuSearchService.removeItem(index);
         }
 
     }
