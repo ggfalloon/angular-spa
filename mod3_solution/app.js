@@ -31,21 +31,23 @@
           var promise = MenuSearchService.getMatchedMenuItems(search);
           promise.then(function (response) {
           if (search === '' || response.length === 0) {
-            list.warning = 'Nothing found.'
+            list.empty = 'Nothing found.'
+            list.items = []
+          } else {
+            list.items = response
           }
-          list.items = response
         })
         .catch(function (err) {
           console.log(err);
-          list.items = []
         });
+        return list.items
         };
 
-        list.items.removeItem = function (index) {
-          list.items = MenuSearchService.removeItem(index);
-        }
-
-    }
+        list.removeItem = function (index) {
+            list.items.splice(index, 1);
+            return list.items
+          };
+    };
     
     MenuSearchService.$inject = ['$http', 'ApiBasePath'];
     function MenuSearchService($http, ApiBasePath) {
@@ -80,10 +82,6 @@
           return foundItems
          });
          return response
-      };
-
-      service.removeItem = function (itemIndex) {
-        foundItems.splice(itemIndex, 1);
       };
 
     }

@@ -13,14 +13,19 @@
    <div class="container" ng-controller="NarrowItDownController as items">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
-    <div class="form-group">
+    <div class="row">
+    <div>
       <input type="text" placeholder="Search term" class="form-control" ng-model="searchStr">
     </div>
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="items.showMenuItems(searchStr)">Narrow It Down For Me!</button>
     </div>
+    </div>
 
-    <div class="form-group results">
+    <div class="results">
+      <div ng-if="!items.items.length">
+        <h3>{{items.empty}}</h3>
+      </div>
       <div ng-if="items.items.length">
         <foundItems found-items="items.items" on-remove="items.removeItem(index)"></foundItems>
      </div>
