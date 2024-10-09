@@ -29,6 +29,7 @@
             return MenuDataService.getAllCategories();
           }]
         }
+        
       })
     
       // Items list page

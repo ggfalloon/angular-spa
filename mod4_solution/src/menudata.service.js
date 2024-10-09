@@ -16,11 +16,9 @@
         method: "GET",
         url: (ApiBasePath + '/categories.json')
     })
-    // .then(function (result) {
-    //   var catItems = Object.values(result.data)
-    //   categories.push(...catItems)
-    //   return categories
-    //  });
+    .then(function (result) {
+        return result.data
+     });
      console.log(response)
      return response
     }

@@ -1,7 +1,8 @@
 <h4> Menu Categories: </h4>
+<p>Click on a Category below to see the menu items.</p>
    <ul class="row">
-        <li ng-repeat="item in categories" class="col-xl-12"
+        <li ng-repeat="item in categories.items" class="col-xl-12"
        ui-sref="items({ categoryShortName: item.short_name })">
-       {{ item.name }} - {{ item.shortName }}
+       {{ item.name }} - {{ item.short_name }}
         </li>
     </ul>
