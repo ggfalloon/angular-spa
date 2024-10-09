@@ -1,7 +1,6 @@
 <h4> Menu Items: </h4>
    <ul class="row">
-        <li ng-repeat="item in items.foundItems" class="col-xl-12">
-        {{ item.name }} - {{ item.shortName }}: {{ item.description }}
-            <button ng-click="items.onRemove({index: $index})">Don't want this one!</button>
+        <li ng-repeat="item in items" class="col-xl-12">
+        {{ item.name }} - {{ item.short_name }}
         </li>
     </ul>

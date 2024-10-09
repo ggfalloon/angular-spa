@@ -4,8 +4,9 @@
     angular.module('MenuApp')
     .controller('ItemsController', ItemsController);
 
-    ItemsController.$inject = ['items'];
-    function ItemsController (items) {
+    // ItemsController.$inject = ['$stateParams','items'];
+    // ItemsController.$inject = ['items'];
+    function ItemsController () {
         var itemsList = this;
         itemsList.items = items
     }

@@ -1,6 +1,7 @@
 <h4> Menu Categories: </h4>
    <ul class="row">
-        <li ng-repeat="item in items" class="col-xl-12">
-        {{ item.name }} - {{ item.shortName }}
+        <li ng-repeat="item in categories" class="col-xl-12"
+       ui-sref="items({ categoryShortName: item.short_name })">
+       {{ item.name }} - {{ item.shortName }}
         </li>
     </ul>

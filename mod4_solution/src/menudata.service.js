@@ -1,8 +1,8 @@
 (function () { 
 
-    angular.module('MenuApp')
+    angular.module('Data')
     .service('MenuDataService', MenuDataService)
-    .constant('ApiBasePath', "https://coursera-jhu-default-rtdb.firebaseio.com")
+    .constant('ApiBasePath', "https://coursera-jhu-default-rtdb.firebaseio.com");
 
     
     MenuDataService.$inject = ['$http', 'ApiBasePath'];
@@ -21,6 +21,7 @@
     //   categories.push(...catItems)
     //   return categories
     //  });
+     console.log(response)
      return response
     }
 
@@ -29,12 +30,13 @@
 
         var response = $http({
             method: "GET",
-            url: (ApiBasePath + '/menu_items.json'),
-            params: {
-                category: categoryShortName
-            }
+            url: (ApiBasePath + '/menu_items/' + categoryShortName + '.json'),
+            // params: {
+            //     category: categoryShortName
+            // }
         }).then(function (result) {
           var processedItems = Object.values(result.data)
+          console.log(processedItems)
     
           processedItems.forEach(pi => {
             var menuItems = pi.menu_items

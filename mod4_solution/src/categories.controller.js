@@ -4,10 +4,13 @@
     angular.module('MenuApp')
     .controller('CategoriesController', CategoriesController);
 
-    CategoriesController.$inject = ['items'];
-    function CategoriesController (items) {
+    // CategoriesController.$inject = ['$stateParams'];
+    function CategoriesController () {
         var catList = this;
-        catList.items = items
+        console.log(catList)
+        // catList.items.short_name = $stateParams.categoryShortName
+        // catList.items = items
+        return catList
     }
 
 })();

@@ -32,18 +32,16 @@
       })
     
       // Items list page
-      .state('categories.items', {
+      .state('items', {
         url: '/items/{categoryShortName}',
         templateUrl: 'src/items.template.html',
         controller: 'ItemsController as items',
         resolve: {
-            items: ['MenuDataService', function(MenuDataService) {
-                return MenuDataService.getItemsForCategory(categoryShortName);
+            items: ['MenuDataService',
+                function(MenuDataService) {
+                return MenuDataService.getItemsForCategory(categoryShortName)
             }]
         }
-        // params: {
-        //   itemId: null
-        // }
       });
     
     }
