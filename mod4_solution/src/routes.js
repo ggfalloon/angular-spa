@@ -38,9 +38,9 @@
         templateUrl: 'src/items.template.html',
         controller: 'ItemsController as items',
         resolve: {
-            items: ['MenuDataService',
-                function(MenuDataService) {
-                return MenuDataService.getItemsForCategory(categoryShortName)
+            items: ['$stateParams', 'MenuDataService',
+                function($stateParams, MenuDataService) {
+                return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
             }]
         }
       });

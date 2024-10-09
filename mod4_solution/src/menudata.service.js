@@ -10,7 +10,6 @@
     var service = this;
 
     service.getAllCategories = function () {
-        var categories = []
 
     var response = $http({
         method: "GET",
@@ -19,28 +18,16 @@
     .then(function (result) {
         return result.data
      });
-     console.log(response)
      return response
     }
 
     service.getItemsForCategory = function (categoryShortName) {
-        var items = []
-
         var response = $http({
             method: "GET",
             url: (ApiBasePath + '/menu_items/' + categoryShortName + '.json'),
-            // params: {
-            //     category: categoryShortName
-            // }
         }).then(function (result) {
-          var processedItems = Object.values(result.data)
-          console.log(processedItems)
-    
-          processedItems.forEach(pi => {
-            var menuItems = pi.menu_items
-            items.push(...menuItems)
-          })
-          return items
+          var processedItems = result.data.menu_items
+          return processedItems
          });
          return response
         }
