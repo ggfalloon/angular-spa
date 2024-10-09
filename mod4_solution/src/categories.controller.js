@@ -6,7 +6,6 @@
 
     CategoriesController.$inject = ['items'];
     function CategoriesController (items) {
-        console.log(items)
         var catList = this;
         catList.items = items
     }
