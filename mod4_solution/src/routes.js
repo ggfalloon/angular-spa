@@ -16,13 +16,13 @@
       // Home page
       .state('home', {
         url: '/',
-        templateUrl: 'src/home.template.html'
+        templateUrl: 'src/templates/home.template.html'
       })
     
       // categories list page
       .state('categories', {
         url: '/categories',
-        templateUrl: 'src/categories.template.html',
+        templateUrl: 'src/templates/categories.template.html',
         controller: 'CategoriesController as categories',
         resolve: {
           items: ['MenuDataService', function (MenuDataService) {
@@ -32,10 +32,10 @@
         
       })
     
-      // Items list page
+      // items list page
       .state('items', {
         url: '/items/{categoryShortName}',
-        templateUrl: 'src/items.template.html',
+        templateUrl: 'src/templates/items.template.html',
         controller: 'ItemsController as items',
         resolve: {
             items: ['$stateParams', 'MenuDataService',
@@ -44,7 +44,6 @@
             }]
         }
       });
-    
     }
     
-    })();
+})();
