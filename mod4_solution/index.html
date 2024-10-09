@@ -1,19 +1,26 @@
 <!doctype html>
-<html lang="en" ng-app="NarrowItDownApp">
+<html lang="en" ng-app="MenuApp">
   <head>
-    <title>Narrow Down Your Menu Choice</title>
+    <title>MenuApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script src="src/data.module.js"></script>
+    <script src="src/menuapp.module.js"></script>
+    <script src="src/routes.js"></script>
+    <script src="src/categories.component.js"></script>
+    <script src="src/items.component.js"></script>
+    <script src="src/menudata.service.js"></script>
   </head>
 <body>
    <div class="container" ng-controller="NarrowItDownController as items">
-    <h1>Narrow Down Your Chinese Menu Choice</h1>
+    <h1>Welcome to our Restaurant</h1>
+    <ui-view></ui-view>
 
-    <div class="row">
+    <!-- <div class="row">
     <div>
       <input type="text" placeholder="Search term" class="form-control" ng-model="searchStr">
     </div>
@@ -29,7 +36,7 @@
       <div ng-if="items.items.length">
         <foundItems found-items="items.items" on-remove="items.removeItem(index)"></foundItems>
      </div>
-    </div>
+    </div> -->
 
   </div>
 
