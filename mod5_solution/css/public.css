@@ -113,6 +113,15 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+/* SIGN UP PAGE */
+.sign-up-button:disabled {
+  background-color: gray;
+}
+
+.sign-up-button {
+  background-color: green;
+}
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {

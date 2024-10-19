@@ -6,25 +6,19 @@
     
     UserDataService.$inject = ['$http', 'ApiPath'];
     function UserDataService($http, ApiPath) {
-       var userData = [{
-        id: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        faveDish: '' 
-       }];
+       var userData = [];
 
       var service = this;
-    
+
       service.saveUserData = function (firstName, lastName, email, phone, shortName) {
+        var firstName = firstName.trim()
+        var lastName = lastName.trim()
         var category = shortName.slice(0, 1)
-        var menuNum = shortName.pop(category) - 1
+        var menuNum = shortName.slice(1) - 1
         var newId = userData.length > 0 ? Math.max(...userData.map(u => u.id)) + 1 : 1;
 
-        return $http.get(ApiPath + '/menu-items/' + category + '/menu_items/' + menuNum + '.json')
+        return $http.get(ApiPath + '/menu_items/' + category + '/menu_items/' + menuNum + '.json')
         .then(function (response) {
-            console.log(response.data)
             if(response.data !== null) {
                 var user = {
                     id: newId,
@@ -37,7 +31,7 @@
             userData.push(user)
             console.log(userData)
             }
-            return response.data
+            return response
         });
       };
     

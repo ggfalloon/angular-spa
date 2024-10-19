@@ -46,9 +46,11 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/sign-up/sign-up.html',
       // controller: 'SignUpController',
       // controllerAs: 'user',
-      // resolve: {
-      //   signUp: ['SignUpService']
-      // }
+      // // resolve: {
+      // //   user: ['UserDataService', function(UserDataService){
+      // //     return UserDataService.saveUserData()
+      // //   }]
+      // // }
     });
 }
 })();
