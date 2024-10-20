@@ -63,11 +63,11 @@
         ng-click="user.saveUser()">Submit</button>
     </form>
 
-    <div id="info" ng-if="user.itemExists">
-      {{ user.message }}
+    <div style='margin-left: 1em;' id="info" ng-if="user.itemExists">
+      <strong>{{ user.message }}</strong>
     </div>
-    <div id="info" ng-if="!user.itemExists">
-      {{ user.message }}
+    <div style='margin-left: 1em;'id="info" ng-if="!user.itemExists">
+      <strong>{{ user.message }}</strong>
     </div>
   </fieldset>
 

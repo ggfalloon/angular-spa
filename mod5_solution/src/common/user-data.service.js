@@ -19,6 +19,7 @@
 
         return $http.get(ApiPath + '/menu_items/' + category + '/menu_items/' + menuNum + '.json')
         .then(function (response) {
+            console.log(response.data)
             if(response.data !== null) {
                 var user = {
                     id: newId,
@@ -26,7 +27,10 @@
                     lastName: lastName,
                     email: email,
                     phone: phone,
-                    faveDish: shortName
+                    faveDish: shortName,
+                    itemName: response.data.name,
+                    category: category,
+                    itemDescription: response.data.description
                 };
             userData.push(user)
             console.log(userData)
@@ -36,11 +40,11 @@
       };
     
     
-    //   service.getMenuItems = function (category) {
-    //     return $http.get(ApiPath + '/menu_items/' + category + '.json').then(function (response) {
-    //       return response.data;
-    //     });
-    //   };
+      service.showUserData = function () {
+        console.log(userData)
+        return userData
+        
+        };
     
     }
     

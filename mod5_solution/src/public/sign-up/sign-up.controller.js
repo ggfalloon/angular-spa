@@ -29,33 +29,13 @@
                     user.itemExists = false
                     user.message = 'No such menu number exists.'
                 } else {
-                    user.message = 'Your information has been saved'
+                    user.message = 'SUCCESS - Your information has been saved!'
                 }
               })
               .catch(function (err) {
                 console.log(err);
               });
-              };
-        }
-
-        // user.saveUser = function (first, last, email, phone, item) {
-        //     console.log('Access to function')
-        //     var promise = UserDataService.saveUserData(first, last, email, phone, item);
-        //     promise.then(function (response) {
-        //     // if (response.data === null) {
-        //     //     user.itemExists = false
-        //     //     user.message = 'No such menu number exists.'
-        //     // } else {
-        //     //     user.itemsExists = true
-        //     //     user.message = 'Your information has been saved'
-        //     // }
-        //     return response
-        //   })
-        //   .catch(function (err) {
-        //     console.log(err);
-        //   });
-        //   return user
-        //   };
-    
+        };
+    }
 
 })();
