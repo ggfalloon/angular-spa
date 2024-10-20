@@ -6,10 +6,8 @@
 
     MyInfoController.$inject = ['myinfo'];
     function MyInfoController(myinfo) {
-        console.log(myinfo)
         var $ctrl = this;
-        $ctrl.myinfo = myinfo[0];
-        console.log($ctrl.myinfo)
+        $ctrl.myinfo = myinfo;
     }
 
 })();

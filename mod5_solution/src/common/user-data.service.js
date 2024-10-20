@@ -4,8 +4,8 @@
     angular.module('common')
     .service('UserDataService', UserDataService);
     
-    UserDataService.$inject = ['$http', 'ApiPath'];
-    function UserDataService($http, ApiPath) {
+    UserDataService.$inject = ['$http', 'ApiPath', '$window'];
+    function UserDataService($http, ApiPath, $window) {
        var userData = [];
 
       var service = this;
@@ -19,7 +19,7 @@
 
         return $http.get(ApiPath + '/menu_items/' + category + '/menu_items/' + menuNum + '.json')
         .then(function (response) {
-            console.log(response.data)
+        
             if(response.data !== null) {
                 var user = {
                     id: newId,
@@ -33,7 +33,8 @@
                     itemDescription: response.data.description
                 };
             userData.push(user)
-            console.log(userData)
+        
+            $window.localStorage.setItem('userData', JSON.stringify(userData))
             }
             return response
         });
@@ -41,8 +42,20 @@
     
     
       service.showUserData = function () {
-        console.log(userData)
-        return userData
+        var userInfo = JSON.parse($window.localStorage.getItem('userData'))
+        var user = {
+            id: userInfo[0].id,
+            firstName: userInfo[0].firstName,
+            lastName: userInfo[0].lastName,
+            email: userInfo[0].email,
+            phone: userInfo[0].phone,
+            faveDish: userInfo[0].faveDish,
+            itemName: userInfo[0].itemName,
+            category: userInfo[0].category,
+            itemDescription: userInfo[0].itemDescription
+        };
+        
+        return user
         
         };
     

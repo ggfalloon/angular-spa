@@ -1,10 +1,10 @@
-<fieldset ng-if="myinfo.myinfo">
-    <legend style="color: white; margin-left: 1em;">USER: {{ myinfoCtrl.myinfo.firstName }} {{ myinfoCtrl.myinfo.lastName }}</legend>
+<fieldset ng-if="myinfoCtrl.myinfo">
+    <legend style="color: white; margin-left: 1em;">MEMBER: {{ myinfoCtrl.myinfo.firstName }} {{ myinfoCtrl.myinfo.lastName }}</legend>
     <div style='margin-left: 5em;'>
-      <p>Email: {{ myinfoCtrl.myinfo.email }}</p>
-      <p>Phone: {{ myinfoCtrl.myinfo.phone }}</p>
-        <p>Favorite Dish: {{ myinfoCtrl.myinfo.itemName }}</p>
-        <p>{{ myinfoCtrl.myinfo.itemDescription }}</p>
+      <p><strong>Email :</strong> {{ myinfoCtrl.myinfo.email }}</p>
+      <p><strong>Phone :</strong> {{ myinfoCtrl.myinfo.phone }}</p>
+        <p><strong>Favorite Dish :</strong>Favorite Dish : {{ myinfoCtrl.myinfo.itemName }}</p>
+        <p><strong>Description :</strong> {{ myinfoCtrl.myinfo.itemDescription }}</p>
         <img ng-src="images/menu/{{myinfoCtrl.myinfo.category}}/{{myinfoCtrl.myinfo.faveDish}}.jpg" alt="{{myinfoCtrl.myinfo.itemName}}">
     </div>
 </fieldset>
