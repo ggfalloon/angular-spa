@@ -1,4 +1,4 @@
-<fieldset ng-if="myinfoCtrl.myinfo.length">
+<fieldset ngController="MyInfoController as myinfo" ng-if="myinfoCtrl.myinfo.length">
     <legend style="color: white; margin-left: 1em;">MEMBER: {{ myinfoCtrl.myinfo.firstName }} {{ myinfoCtrl.myinfo.lastName }}</legend>
     <div style='margin-left: 5em;'>
       <p><strong>Email :</strong> {{ myinfoCtrl.myinfo.email }}</p>
