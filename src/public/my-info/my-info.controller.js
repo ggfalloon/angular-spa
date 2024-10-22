@@ -8,6 +8,8 @@
     function MyInfoController(myinfo) {
         var $ctrl = this;
         $ctrl.myinfo = myinfo;
+        console.log($ctrl.myinfo)
+
     }
 
 })();

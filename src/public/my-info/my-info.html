@@ -1,14 +1,15 @@
-<fieldset ng-if="myinfoCtrl.myinfo.length">
+ 
+  <fieldset ng-if="myinfoCtrl.myinfo">
     <legend style="color: white; margin-left: 1em;">MEMBER: {{ myinfoCtrl.myinfo.firstName }} {{ myinfoCtrl.myinfo.lastName }}</legend>
     <div style='margin-left: 5em;'>
       <p><strong>Email :</strong> {{ myinfoCtrl.myinfo.email }}</p>
       <p><strong>Phone :</strong> {{ myinfoCtrl.myinfo.phone }}</p>
-        <p><strong>Favorite Dish :</strong>Favorite Dish : {{ myinfoCtrl.myinfo.itemName }}</p>
+        <p><strong>Favorite Dish :</strong> {{ myinfoCtrl.myinfo.itemName }}</p>
         <p><strong>Description :</strong> {{ myinfoCtrl.myinfo.itemDescription }}</p>
         <img ng-src="images/menu/{{myinfoCtrl.myinfo.category}}/{{myinfoCtrl.myinfo.faveDish}}.jpg" alt="{{myinfoCtrl.myinfo.itemName}}">
     </div>
-</fieldset>
+  </fieldset>
 
-  <div style='margin-left: 1em;'id="info" ng-if="!myinfoCtrl.myinfo.length">
+  <div style='margin-left: 1em;'id="info" ng-if="!myinfoCtrl.myinfo">
     <p>Not Signed Up Yet. <a ui-sref="public.signup" style="text-decoration: underline;">Sign Up Now!</a></p>
   </div>
