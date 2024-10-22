@@ -1,4 +1,4 @@
-<fieldset ng-if="myinfoCtrl.myinfo">
+<fieldset ng-if="myinfoCtrl.myinfo.length">
     <legend style="color: white; margin-left: 1em;">MEMBER: {{ myinfoCtrl.myinfo.firstName }} {{ myinfoCtrl.myinfo.lastName }}</legend>
     <div style='margin-left: 5em;'>
       <p><strong>Email :</strong> {{ myinfoCtrl.myinfo.email }}</p>
@@ -9,6 +9,6 @@
     </div>
 </fieldset>
 
-  <div style='margin-left: 1em;'id="info" ng-if="!myinfoCtrl.myinfo">
+  <div style='margin-left: 1em;'id="info" ng-if="!myinfoCtrl.myinfo.length">
     <p>Not Signed Up Yet. <a ui-sref="public.signup" style="text-decoration: underline;">Sign Up Now!</a></p>
   </div>
